@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Início - Lembrei</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/calender.png')}}" sizes="32x32">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <div id="fundo">
+        <div class="logo_home">
+            <img src="{{ url_for('static', filename='imagens/home.png')}}">
+        </div>
+
+        <h1 class="home">HOME</h1>
+
+        <div class="linha">
+            <img src="{{ url_for('static', filename='imagens/linha.png')}}">
+        </div>
+
+        <h2 class="novo_lembrete">NOVO LEMBRETE</h2>
+
+        <div class="adicionar">
+            <img src="{{ url_for('static', filename='imagens/adicionar.png')}}">
+        </div>
+
+        <form action="/criar-lembrete" method="post">
+            <div class="input-bloco">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" placeholder="Nome do lembrete" name="nome" required><br><br>
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data" required><br><br>
+            </div>
+                <input class="botao_criar" type="submit" value="Criar"><br><br>
+        
+            
+        </form>
+
+        <!-- Div para o alerta de erro -->
+        <div id="alertaErro" class="alerta">
+            <span class="fechar_home" onclick="fecharAlerta('alertaErro')">&times;</span>
+            <p>Data inválida! Por favor, insira uma data válida no futuro.</p>
+        </div>
+    
+        <!-- Div para o alerta de sucesso -->
+        <div id="alertaSucesso" class="alerta">
+            <span class="fechar_home" onclick="fecharAlerta('alertaSucesso')">&times;</span>
+            <p>Lembrete criado com sucesso!</p>
+        </div>
+
+        <script src="/static/js/script.js"></script>
+
+    <div class="linha2">
+        <img src="{{ url_for('static', filename='imagens/linha.png')}}">
+    </div>
+
+    <button class="botao_meusLembretes" onclick="window.location.href = '/meus-lembretes'">Ver meus lembretes</button>
+    
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,521 @@
+/* Fundo do celular */
+#fundo {
+    width: 375px;
+    height: 667px;
+    border-radius: 20px;
+    background: #879299;
+}
+/* =========================================
+            INÍCIO PÁGINA HOME         
+============================================ */
+/* Logo home */
+.logo_home img {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    left: 105px;
+    top: 23px;
+}
+
+/* Texto 'HOME' */
+.home {
+    color: #484849;
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 700;
+    word-wrap: break-word;
+    text-align: center;
+    padding-top: 25px;
+}
+
+/* Linha branca layout */
+.linha img {
+    width: 100%;
+    height: 1px;
+    padding-top: -5px;
+}
+
+/* Texto 'NOVO LEMBRETE' */
+.novo_lembrete {
+    color: #E5E5E5;
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 700;
+    word-wrap: break-word;
+    text-align: center;
+    padding-top: 65px;
+    padding-right: 30px;
+}
+
+/* Ícone adicionar (mais/adição) */
+.adicionar img {
+    width: 53px;
+    height: 53px;
+    position: absolute;
+    left: 268px;
+    top: 181px;
+}
+
+/* Bloco de pergunta -> 'Nome:' and 'Data:' */
+.input-bloco {
+    position: relative;
+    margin-bottom: 50px;
+    width: 60px; 
+    height: 20px;
+    border-radius: 15px;
+    padding-left: 30px;
+}
+
+/* Bloco de resposta -> 'Nome:' and 'Data:' */
+label[for='nome'], label[for='data'] {
+    display: inline-block;
+    padding: 8px;
+    background-color: #484849;
+    border: none;
+    border-radius: 15px 0px 0px 15px;
+    width: 43px;
+    height: 21px;
+    color: #CACACA;
+}
+
+/* Placeholder -> 'Nome do lembrete' */
+input[type='text']{
+    display: inline-block;
+    position: absolute;
+    left: 90px;
+    padding:  10px 8px 8px 10px;
+    padding-left: 10px;
+    border-radius: 0px 15px 15px 0px;
+    border: none;
+    background-color: #F4F4F4;
+    color: #484849;
+    text-indent: 0;
+    width: 220px;
+    font-size: 16px;
+}
+
+/* Placeholder -> 'dd/mm/yyyy' */
+input[type='date']{
+    display: inline-block;
+    position: absolute;
+    left: 90px;
+    padding:  8px 8px 8px 10px;
+    padding-left: 10px;
+    border-radius: 0px 15px 15px 0px;
+    border: none;
+    background-color: #F4F4F4;
+    color: #787878;
+    text-indent: 0;
+    width: 220px;
+    font-size: 16px;
+}
+
+/* Botão 'Criar' */
+.botao_criar {
+    background-color: #484849;
+    color: #CACACA;
+    border-radius: 15px;
+    width: 93px;
+    height: 43px;
+    border: none;
+    font-size: 18px;
+    font-family: Roboto;
+    font-style: normal;
+    text-align: center;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 400px;
+    left: 140px;
+    transition: background-color 0.3s ease;
+}
+
+/* Alterando a cor quando o botão 'Criar' é clicado */
+.botao_criar:hover {
+    background-color: #2980b9; 
+}
+
+/* Linha branca layout */
+.linha2 img {
+    width: 100%;
+    height: 1px;
+    padding-top: 210px;
+}
+
+/* Botão 'Ver meus lembretes' */
+.botao_meusLembretes {
+    background-color: #484849;
+    color: #CACACA;
+    border-radius: 15px;
+    width: 213px;
+    height: 49px;
+    border: none;
+    font-size: 18px;
+    font-family: Roboto;
+    font-style: normal;
+    text-align: center;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 600px;
+    left: 80px;
+    transition: background-color 0.3s ease;
+}
+
+/* Alterando a cor quando o botão 'Ver meus lembretes' é clicado */
+.botao_meusLembretes:hover {
+    background-color: #2980b9; 
+}
+
+
+/* Alerta de ERRO */
+#alertaErro {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    left: 188px;
+    top: 475px;
+    transform: translateX(-50%);
+    background-color: #fafafa;
+    color: red;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #fafafa;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+/* Alerta de SUCESSO */
+#alertaSucesso {
+    display: none;
+    position: fixed;
+    bottom: 50px;
+    left: 188px;
+    top: 475px;
+    transform: translateX(-50%);
+    background-color: #fafafa;
+    color: green;
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #fafafa;
+    border-radius: 5px;
+    width: 200px;
+    height: 40px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+/* Texto do alerta de ERRO */
+#alertaErro p {
+    font-size: 14px;
+    margin: 3px;
+    line-height: 1.2; 
+}
+
+/* Texto do alerta de SUCESSO */
+#alertaSucesso p {
+    font-size: 14px;
+    margin: 12px;
+    line-height: 1.2;
+}
+
+/* 'x' para fechar o alerta */
+.fechar_home {
+    position: absolute;
+    top: -2px;
+    right: 5px;
+    font-size: 18px;
+    cursor: pointer;
+    color: #484849;
+    font-weight: bold;
+  }
+
+/* =========================================
+            FINAL PÁGINA HOME         
+============================================ */
+/* =========================================
+       INÍCIO PÁGINA MEUS LEMBRETES         
+============================================ */
+/* Logo meus lembretes */
+.logo_meusLembretes img {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    left: 40px;
+    top: 23px;
+}
+
+/* Texto 'MEUS LEMBRETES' */
+.meusLembretes {
+    color: #484849;
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 700;
+    word-wrap: break-word;
+    text-align: center;
+    padding-top: 25px;
+}
+
+/* Linha branca layout */
+.linha img {
+    width: 100%;
+    height: 1px;
+    top: -5px;
+}
+
+/* Largura da barra de rolagem */
+.container-lembretes::-webkit-scrollbar {
+    width: 10px; 
+}
+
+/* Cor de fundo da área da barra de rolagem */
+.container-lembretes::-webkit-scrollbar-track {
+    background: #879299;
+}
+
+/* Barra de rolagem */
+.container-lembretes::-webkit-scrollbar-thumb {
+    background-color:#484849;
+    border-radius: 5px;
+}
+
+/* Bloco dos lembretes */
+.container-lembretes {
+    display: block;
+    flex-direction: column;
+    gap: 20px;
+    max-height: 500px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+}
+
+/* Bloco da data */
+.container-data {
+    width: 90%;
+    padding-left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+}
+
+/* Texto da data */
+.container-data h2 {
+    margin: 0;
+    text-align: left;
+    font-family: Trebuchet;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    background-color: #d2d1d1;
+    padding: 5px;
+    width: 70px;
+    height: 15px;
+    border-radius: 5px;
+}
+
+/* Lista dos lembretes por data */
+.lista-lembrete {
+    list-style: none;
+    padding-left: 0;
+}
+
+.lista-lembrete li a {
+    text-decoration: none;
+    color: #333;
+    
+}
+
+.marcador::before {
+    content:  "•"; 
+    margin-right: 5px; 
+}
+
+
+/* Linha branca layout */
+.linha2_meusLembretes img {
+    position: fixed;
+    width: 375px;
+    height: 1px;
+    top: 610px;
+}
+
+/* Botão 'Voltar' -> Editar */
+.botao_voltar_meusLembretes {
+    background-color: #484849;
+    color: #CACACA;
+    border-radius: 15px;
+    width: 114px;
+    height: 43px;
+    border: none;
+    flex-shrink: 0;
+    font-size: 18px;
+    font-family: Roboto;
+    font-style: normal;
+    text-align: center;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 623px;
+    left: 130px;
+    transition: background-color 0.3s ease;
+}
+
+/* Alterando a cor quando o botão 'Voltar' é clicado */
+.botao_voltar_meusLembretes:hover {
+    background-color: #2980b9; 
+}
+/* =========================================
+       FINAL PÁGINA MEUS LEMBRETES         
+============================================ */
+/* =========================================
+           INÍCIO PÁGINA EDITAR         
+============================================ */
+
+/* Texto 'EDITAR LEMBRETES' */
+.editar_lembrete {
+    color: #484849;
+    font-size: 24px;
+    font-family: Roboto;
+    font-weight: 700;
+    word-wrap: break-word;
+    text-align: center;
+    padding-top: 25px;
+    padding-left: 20px;
+}
+
+/* Logo editar */
+.logo_editar img {
+    width: 65px;
+    height: 65px;
+    position: absolute;
+    left: 40px;
+    top: 23px;
+}
+
+/* Bloco de pergunta -> 'Nome:' and 'Data:' */
+.input-bloco-editar {
+    position: relative;
+    width: 60px; 
+    height: 20px;
+    border-radius: 15px;
+    padding-left: 30px;
+    top: 130px;
+}
+
+/* Bloco de resposta -> 'Nome:' and 'Data:' */
+label[for='nome_editar'], label[for='data_editar'] {
+    display: inline-block;
+    padding: 8px;
+    background-color: #484849;
+    border: none;
+    border-radius: 15px 0px 0px 15px;
+    width: 43px;
+    height: 21px;
+    color: #CACACA;
+}
+
+
+/* Botão 'Salvar' -> Editar */
+.botao_salvar {
+    background-color: #484849;
+    color: #CACACA;
+    border-radius: 15px;
+    width: 114px;
+    height: 46px;
+    border: none;
+    flex-shrink: 0;
+    font-size: 16px;
+    font-family: Roboto;
+    font-style: normal;
+    text-align: center;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 123px;
+    left: 33px;
+    transition: background-color 0.3s ease;
+}
+
+/* Alterando a cor quando o botão 'Salvar' é clicado */
+.botao_salvar:hover {
+    background-color: #2980b9; 
+}
+
+/* Botão 'Excluir' -> Editar */
+.botao_excluir {
+    background: #DF5951;
+    color: #CACACA;
+    border-radius: 15px;
+    width: 144px;
+    height: 46px;
+    border: none;
+    flex-shrink: 0;
+    font-size: 16px;
+    font-family: Roboto;
+    font-style: normal;
+    text-align: center;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 360px;
+    left: 188px;
+    transition: background-color 0.3s ease;
+}
+
+/* Alterando a cor quando o botão 'Excluir' é clicado */
+.botao_excluir:hover {
+    background-color:red; 
+}
+
+/* Linha branca layout */
+.linha2_editar img {
+    width: 100%;
+    height: 1px;
+    padding-top: 460px;
+}
+
+/* Botão 'Voltar' -> Editar */
+.botao_voltar {
+    background-color: #484849;
+    color: #CACACA;
+    border-radius: 15px;
+    width: 114px;
+    height: 43px;
+    border: none;
+    flex-shrink: 0;
+    font-size: 18px;
+    font-family: Roboto;
+    font-style: normal;
+    text-align: center;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 615px;
+    left: 130px;
+    transition: background-color 0.3s ease;
+}
+
+/* Alterando a cor quando o botão 'Voltar' é clicado */
+.botao_voltar:hover {
+    background-color: #2980b9; 
+}
+
+/* =========================================
+           FINAL PÁGINA EDITAR         
+============================================ */

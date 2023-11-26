@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista - Lembrei</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/calender.png')}}" sizes="32x32">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <div id="fundo">
+
+        <div class="logo_meusLembretes">
+            <img src="{{ url_for('static', filename='imagens/calendario.png')}}">
+        </div>
+
+        <h1 class="meusLembretes">MEUS LEMBRETES</h1>
+
+        <div class="linha">
+            <img src="{{ url_for('static', filename='imagens/linha.png')}}">
+        </div>
+
+        <div class="container-lembretes">
+            {% set datas = [] %}
+            {% for lembrete in lembretes %}
+                {% set data = lembrete['data'] %}
+                {% if data not in datas %}
+                    {% set _ = datas.append(data) %}
+                {% endif %}
+            {% endfor %}
+
+            {% for data in datas|sort %}
+                <div class="container-data">
+                    <h2>{{ data }}</h2>
+                    <ul class="lista-lembrete">
+                        {% for lembrete in lembretes %}
+                            {% if lembrete['data'] == data %}
+                                <li class="marcador"><a href="/editar-lembrete/{{ loop.index0 }}">{{ lembrete['nome'] }}</a></li>
+                            {% endif %}
+                        {% endfor %}
+                    </ul>
+                </div>    
+            {% endfor %}
+        </div>
+
+
+        <div class="linha2_meusLembretes">
+            <img src="{{ url_for('static', filename='imagens/linha.png')}}">
+        </div>
+    
+        <button class="botao_voltar_meusLembretes" onclick="window.location.href ='/'">Voltar</button>
+
+    </div>
+</body>
+</html>

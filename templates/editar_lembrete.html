@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar - Lembrei</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='imagens/calender.png')}}" sizes="32x32">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+</head>
+<body>
+    <div id="fundo">
+        <div class="logo_editar">
+            <img src="{{ url_for('static', filename='imagens/editar.png')}}">
+        </div>
+
+        <h1 class="editar_lembrete">EDITAR LEMBRETES</h1>
+
+        <div class="linha">
+            <img src="{{ url_for('static', filename='imagens/linha.png')}}">
+        </div>
+
+        <form action="/editar-lembrete/{{ index }}" method="post">
+            <div class="input-bloco-editar">
+                <label for="nome_editar">Nome:</label>
+                <input type="text" id="nome" name="nome" value="{{ lembrete.nome }}" required><br><br>
+                <label for="data_editar">Data:</label>
+                <input type="date" id="data" name="data" value="{{ lembrete.data }}" required><br><br>
+                <input class="botao_salvar" type="submit" value="Salvar">
+            </div>
+        </form>
+
+        
+        <button class="botao_excluir" onclick="window.location.href ='/deletar-lembrete/{{ index }}'">Excluir Lembrete</button>
+
+
+        <div class="linha2_editar">
+            <img src="{{ url_for('static', filename='imagens/linha.png')}}">
+        </div>
+    
+        <button class="botao_voltar" onclick="window.location.href ='/meus-lembretes'">Voltar</button>
+        
+    </div>
+</body>
+</html>

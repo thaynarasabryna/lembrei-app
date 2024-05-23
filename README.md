@@ -17,8 +17,3 @@ https://github.com/thaynarasabryna/dti-lembrei/assets/112216179/e152bc78-387d-48
 - Javascript
 - HTML
 - CSS
-
-## Bônus:
-Heroku: Cloud Application Platform.
-- Realizei o deploy da aplicação no Heroku para facilitar os testes, dispensando a necessidade de executar o código principal.
-- Veja o resultado [aqui](https://lembrei-dti-955725b69307.herokuapp.com/).
